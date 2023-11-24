@@ -11,10 +11,10 @@ class Boss(QueueClient):
         i = 1
         while True:
             tache = Task(i)
-            self.tasks.put(tache)
+            self.tasks.put(tache, i)
             time.sleep(4)
             result = self.results.get()
-            print("boss a récupéré resultat = " + str(result[0]) + " pour un temps de " + str(result[1]))
+            print("Boss a récupéré resultat = " + str(result[0]) + " pour un temps de " + str(result[1]) + " pour la tache numéro " + str(result[2]))
             
             i+=1
 

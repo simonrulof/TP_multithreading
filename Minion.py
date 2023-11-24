@@ -10,9 +10,9 @@ class Minion(QueueClient):
     def run(self):
         while True:
             time.sleep(1)
-            task = self.tasks.get()
+            task, i = self.tasks.get()
             result = task.work()
-            self.results.put((task.x, task.time))
+            self.results.put((task.x, task.time, i))
 
 if __name__ == "__main__":
     m = Minion()
