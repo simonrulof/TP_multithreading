@@ -1,3 +1,5 @@
-class Boss:
+import QueueClient
+
+class Boss(QueueClient):
     def __init__(self):
-        pass
+        super()
